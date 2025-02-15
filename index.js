@@ -9,8 +9,6 @@
 // En JavaScript podemos usar "console.log" para mostrar mensajes en la consola.
 // Ésta es la forma clásica de comenzar en cualquier lenguaje de programación:
 
-console.log("Hello World");
-
 // EJERCICIO 1 (para resolver):
 // ************************************
 // 1. Escribe otra línea que use console.log para
@@ -21,22 +19,56 @@ console.log("Hello World");
 
 
 /**************************************************/
-/*                   Tipos de Datos               */
+/*                   Tipos de Datos y Variables               */
 /**************************************************/
 
 // En JavaScript existen varios tipos de datos básicos:
 
 // 1. string (cadena de texto) -> "Hola", "JavaScript"
-let texto = "Esto es un string"; // string
+let texto = "Esto es un string en Javascript"; // string
 // 2. number (número) -> 10, 3.14
-let numeroEntero = 10; // number
-let numeroDecimal = 3.14; // number
+let numeroEntero = 10; // number integer
+let numeroDecimal = 3.14; // number float
 // 3. boolean (booleano) -> true, false
-let esEstudiante = true; // boolean
+let esEstudiante = false; // boolean
+
 // 4. undefined -> valor no definido
-let valorNoDefinido; // undefined
+let valorNoDefinido;
+//console.log('valorNoDefinido', valorNoDefinido); // undefined
 // 5. null -> valor nulo (intencionalmente vacío)
 let valorNulo = null; // null
+
+// 6. NaN -> Not a Number
+let notANumber = NaN;
+
+let saludo = false;
+
+let hola = "Hola";
+//console.log(hola);
+const holaMundo = "Hola Mundo";
+//console.log(holaMundo)
+hola = false;
+//console.log(hola);
+//holaMundo = true;
+//console.log(holaMundo)
+
+//JAMAS USAR var
+var despedida = "Chau";
+//console.log(despedida)
+despedida = "Bye";
+//console.log(despedida)
+
+let buenosDiasAleman = "Guten Morgen";
+
+//Datos/Valores trutsy todos los que no son falsy
+
+//Datos/Valores falsy
+let falso = false;
+let cero = 0;
+let nulo = null;
+let indefinido = undefined;
+let vacio = '';
+let noEsUnNumero = NaN;
 
 // EJEMPLO: 
 /*console.log("Texto:", texto);
@@ -55,24 +87,56 @@ console.log("Null:", valorNulo);*/
 
 
 /**************************************************/
-/*                     Arrays                     */
+/*                     Arrays(Lista)                     */
 /**************************************************/
 
 // Un array (arreglo) es una lista de elementos ordenados.
 // Podemos almacenarlos en una sola variable:
 
-let frutas = ["manzana", "banana", "naranja"];
+const frutas = ["manzana", "banana", "naranja", "mandarina", "arandanos"];
+//Formar un array de uno nuevo;
+const dosFrutas = frutas.splice(2);
+//console.log(dosFrutas);
+const verduras = ["brocoli", "lechuga", "tomate"];
+//Combinas dos arrays;
+let comida = frutas + verduras;
+//Esta es la manera correcta;
+comida = frutas.concat(verduras);
+//console.log('comida', comida);
+comida = frutas.join(verduras);
+//console.log('comida join', comida);
+//console.log(frutas);
+let numerosEnteros = [1, 2, 3, 4, 5];
+let booleanos = [true, false, false, true];
+//Nunca hagas listas combinadas.
+let listaCombinada = [true, "Hola", 10, 15, false, "Chau"];
+
 
 // Podemos acceder a cada elemento usando su índice (comienza en 0):
-/*console.log("Primera fruta:", frutas[0]);
-console.log("Segunda fruta:", frutas[1]);*/
+//console.log("Primera fruta:", frutas[0]);
+//console.log("Segunda fruta:", frutas[1]);
 
 // EJEMPLO: Agregamos un nuevo elemento al final con push:
 frutas.push("uva");
+//console.log(frutas);
 //console.log("Después de push:", frutas);
 
 // EJEMPLO: Eliminamos el último elemento con pop:
 let ultimaFruta = frutas.pop();
+
+//Remover primer elemento del array
+console.log(frutas);
+//Remueves primer elemento;
+frutas.shift()
+console.log(frutas);
+// Agregar elemento al inicio
+frutas.unshift("uvas")
+console.log(frutas);
+//Numero de elementos de un array
+//console.log(frutas.length)
+//Ultimo elemento del array
+//console.log(frutas[frutas.length -1]);
+
 /*console.log("Elemento eliminado:", ultimaFruta);
 console.log("Después de pop:", frutas);*/
 
