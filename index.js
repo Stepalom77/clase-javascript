@@ -125,13 +125,13 @@ frutas.push("uva");
 let ultimaFruta = frutas.pop();
 
 //Remover primer elemento del array
-console.log(frutas);
+//console.log(frutas);
 //Remueves primer elemento;
 frutas.shift()
-console.log(frutas);
+//console.log(frutas);
 // Agregar elemento al inicio
 frutas.unshift("uvas")
-console.log(frutas);
+//console.log(frutas);
 //Numero de elementos de un array
 //console.log(frutas.length)
 //Ultimo elemento del array
@@ -139,6 +139,13 @@ console.log(frutas);
 
 /*console.log("Elemento eliminado:", ultimaFruta);
 console.log("Después de pop:", frutas);*/
+
+//&& Y
+//|| O
+//== Igual inestrcito
+//=== Igual estricto
+//!== desigual estricto
+// != desigual indestricto
 
 // EJERCICIO 3 (para resolver):
 // ************************************
@@ -158,8 +165,20 @@ console.log("Después de pop:", frutas);*/
 let persona = {
   nombre: "Juan",
   edad: 25,
-  ciudad: "Madrid"
+  ciudad: "Madrid",
+  casado: false,
+  titulos: ['Primaria', 'Secundaria', 'Universidad', 'Desarrollador'],
+  years: [1, 2, 3, 4, 5],
+  username: 'stephanopalominomadueno',
 };
+
+//onsole.log('persona', persona.nombre);
+persona.nombre = 'Stephano';
+//console.log('nombre nuevo', persona.nombre);
+persona.titulos.push('Master');
+//console.log('array', persona.titulos);
+persona.titulos.pop()
+//console.log('array', persona.titulos);
 
 // Accedemos a las propiedades con la notación punto o corchetes:
 /*console.log("Nombre:", persona.nombre);
@@ -168,6 +187,7 @@ console.log("Edad:", persona["edad"]);*/
 // EJEMPLO: podemos añadir más propiedades:
 persona.ocupacion = "Estudiante";
 //console.log("Objeto persona actualizado:", persona);
+
 
 // EJERCICIO 4 (para resolver):
 // ************************************
@@ -184,7 +204,7 @@ persona.ocupacion = "Estudiante";
 // Las condicionales nos permiten ejecutar bloques de código
 // basados en condiciones (true o false).
 
-let edad = 18;
+let edad = 17;
 
 /*if (edad >= 18) {
   console.log("Eres mayor de edad");
@@ -193,14 +213,47 @@ let edad = 18;
 }*/
 
 // Podemos encadenar más condiciones con else if:
-let hora = 10; // 10 AM
-
+ // 10 AM
+ let hora = 10;
+ let days = ['Monday', 'Thuesday'];
 /*if (hora < 12) {
-  console.log("Buenos días");
+  days.push('Wednesday')
 } else if (hora < 18) {
-  console.log("Buenas tardes");
+  days.push('Saturday');
 } else {
-  console.log("Buenas noches");
+  days = [];
+}
+
+console.log(days);*/
+
+//En lugar de esto
+/*if(hora < 12) {
+  console.log('Good morning');
+} else if (hora <= 18) {
+  console.log('Good Afternoon');
+} else if (hora <= 24) {
+  console.log('Good Evening');
+} else if (hora > 24) {
+  console.log('This number is too high to be an hour of the day');
+} else {
+  console.log('Hello');
+}*/
+
+//Has esto
+// Switch statement
+
+/*switch(hora) {
+  case 10:
+    console.log('Good morning')
+    break;
+  case 18:
+    console.log('Good Afternoon')
+    break;
+  case 23:
+    console.log('Good Evening')
+    break;
+  default: 
+  console.log('This number is too high to be an hour of the day')
 }*/
 
 // EJERCICIO 5 (para resolver):
@@ -210,25 +263,60 @@ let hora = 10; // 10 AM
 // 3. Si puntaje está entre 50 y 69, muestra "Necesita mejorar".
 // 4. Si puntaje < 50, muestra "Reprobado".
 // 5. Prueba con distintos valores de "puntaje" para verificar cada caso.
+//6. Hacer el mismo ejercicio pero con switch statement
 
 
 /**************************************************/
-/*                     Bucles                     */
+/*                     Loops                     */
 /**************************************************/
 
 // Los bucles nos permiten ejecutar un bloque de código varias veces.
-
+// Esto i = i + 1 es igual a i++
 // For loop:
 /*for (let i = 0; i < 5; i++) {
   console.log("Valor de i:", i);
 }*/
+/*
+Esto es lo que hace el for loop:
+1. Revisar si la condicional se cumplio (i < 5).
+2. Si se cumplio la condicional, entonces se corre el codigo dentro del for loop;
+3. Se hace el aumento del valor (i++)
+*/
+//Array de objetos
+let personas = [
+  {
+    nombre: "Juan",
+    edad: 25,
+    ciudad: "Madrid",
+    casado: true,
+    titulos: ['Primaria', 'Secundaria'],
+  },
+  {
+    nombre: "Stephano",
+    edad: 31,
+    ciudad: "Lima",
+    casado: false,
+    titulos: ['Primaria', 'Secundaria', 'Universidad', 'Desarrollador', 'Abogado'],
+  },
+  {
+    nombre: "Jesus",
+    edad: 16,
+    ciudad: "Lima",
+    casado: false,
+    titulos: ['Primaria', 'Secundaria'],
+  }
+]
+// Asi acceder a todos los elementos de un array con un for loop
+for(let i = 0; i < personas.length; i++) {
+  console.log( 'i , persona' , i , personas[i]);
+}
 
 // While loop:
 let contador = 0;
-/*while (contador < 3) {
+while (contador < 3) {
   console.log("Contador:", contador);
   contador++;
-}*/
+}
 
 // EJERCICIO 6 (para resolver):
 // ************************************
