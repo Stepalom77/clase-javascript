@@ -356,21 +356,50 @@ let resultadoSuma = sumar(5, 3);
 
 
 /**************************************************/
-/*            Extra: Variables let y const        */
+/*                   Clases                       */
 /**************************************************/
 
-// let -> se puede reasignar.
-let x = 10;
-x = 20; // reasignado
+// Las clases permiten crear objetos con propiedades y métodos de forma organizada y reutilizable.
 
-// const -> no se puede reasignar.
-const y = 15;
-// y = 30; // Esto causaría un error, ya que const no se puede reasignar.
+// Declaración de una clase
+class Persona {
+  // Constructor: inicializa las propiedades
+  constructor(nombre, edad) {
+    this.nombre = nombre;
+    this.edad = edad;
+  }
 
-// EJERCICIO 8 (para resolver):
+  // Método de la clase
+  presentarse() {
+    console.log(`Hola, soy ${this.nombre} y tengo ${this.edad} años.`);
+  }
+}
+
+// Crear objeto usando la clase
+let persona1 = new Persona("Lucía", 28);
+persona1.presentarse(); // Salida: Hola, soy Lucía y tengo 28 años.
+
+// Herencia: una clase puede heredar propiedades y métodos de otra clase.
+class Estudiante extends Persona {
+  constructor(nombre, edad, curso) {
+    super(nombre, edad); // Llama al constructor de la clase padre
+    this.curso = curso;
+  }
+
+  mostrarCurso() {
+    console.log(`${this.nombre} estudia ${this.curso}.`);
+  }
+}
+
+let estudiante1 = new Estudiante("Pedro", 21, "Ingeniería");
+estudiante1.presentarse();  // Salida: Hola, soy Pedro y tengo 21 años.
+estudiante1.mostrarCurso(); // Salida: Pedro estudia Ingeniería.
+
+// EJERCICIO 2 (para resolver):
 // ************************************
-// 1. Declara una variable let "precio" con valor 100, luego reasígnala a 150 y muestra ambos valores.
-// 2. Declara una constante "PI" con valor 3.14159 y trata de reasignarla, observa el error que aparece. 
+// 1. Crea una clase llamada "Coche" que tenga propiedades marca y modelo, y un método "mostrarDatos" que imprima los datos.
+// 2. Crea una instancia (objeto) de la clase Coche y llama al método "mostrarDatos".
+
 
 
 /**************************************************/
